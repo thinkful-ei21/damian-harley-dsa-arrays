@@ -77,3 +77,13 @@ function stringRotation(str1, str2) {
 
 console.log(stringRotation('amazon', 'azonma'));
 console.log(stringRotation('amazon', 'azonam'));
+
+function products(arr) { 
+  if (!arr.length) {
+      return [];
+    }
+//  for (let i = 0; i < arr.length; i++){
+
+      
+  return [arr[0] * [n+1], ...products(arr.slice(1))]
+}

@@ -48,3 +48,14 @@ function mergeArrays(arr1, arr2) {
 
 console.log(mergeArrays([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
 
+function noVowels(str) {
+  let newStr = '';
+  var vowels = ['a','e','i','o','u']
+  for (let i = 0; i < str.length; i++){
+    if (!vowels.includes(str[i])) {
+       newStr += str[i];
+    }
+  }
+  return newStr;
+}
+console.log(noVowels('novowels'))

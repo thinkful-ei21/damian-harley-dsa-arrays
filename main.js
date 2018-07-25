@@ -22,6 +22,8 @@ function main(){
   arr.push('tauhida');
   console.log(arr);
   console.log(arr.get(0));
+  let s = 'happy';
+  console.log(s[0]);
 
 }
 

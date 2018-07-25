@@ -50,12 +50,30 @@ console.log(mergeArrays([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
 
 function noVowels(str) {
   let newStr = '';
-  var vowels = ['a','e','i','o','u']
+  var vowels = ['a','e','i','o','u'];
   for (let i = 0; i < str.length; i++){
     if (!vowels.includes(str[i])) {
-       newStr += str[i];
+      newStr += str[i];
     }
   }
   return newStr;
 }
-console.log(noVowels('novowels'))
+console.log(noVowels('novowels'));
+
+function stringRotation(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  for (let i = 0; i < str2.length; i++) {
+    if (str2[i] === str1[0]) {
+      let rotation = str2.substring(i) + str2.substring(0,i);
+      if (rotation === str1) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+console.log(stringRotation('amazon', 'azonma'));
+console.log(stringRotation('amazon', 'azonam'));

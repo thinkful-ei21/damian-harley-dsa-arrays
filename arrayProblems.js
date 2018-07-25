@@ -12,6 +12,8 @@ function spaceFiller(str) {
   return newStr;
 }
 
+//spacefiller iterates once through str n times, where n is the length of the string, so it scales at O(n)
+
 console.log(spaceFiller('tauhida parveen'));
 
 
@@ -26,7 +28,10 @@ function lessThanFive(arr) {
 }
 console.log(lessThanFive([3, 4, 5, 10, 15]));
 
+//lessThanFive scales at O(n), where n is the number of elements in arr
+
 //function maxContinuousSum
+//This algorithm would permutate through all possible continuos arrays, making it scale O(n!), where n is array length
 
 function mergeArrays(arr1, arr2) {
   let index2 = 0;
@@ -46,6 +51,9 @@ function mergeArrays(arr1, arr2) {
   return newArr;
 }
 
+//mergeArrays iterates through each array once, or m + n times, where m is the length of arr1 and n is the length of arr2
+//So it scales linearly, O(n)
+
 console.log(mergeArrays([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
 
 function noVowels(str) {
@@ -59,6 +67,30 @@ function noVowels(str) {
   return newStr;
 }
 console.log(noVowels('novowels'));
+
+//noVowels scales at O(n), where n is the length of str
+
+function products(arr) { 
+  //find the product of the entire arr
+  let total_product = 1;
+  for (let i = 0; i < arr.length; i++) {
+    total_product = total_product * arr[i];
+  }
+  //loop through the array and find total_product/value for each element
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(total_product/arr[i]);
+  }
+  //return new array
+  return newArr;
+}
+
+console.log(products([1, 3, 9, 4]));
+
+//products passes through arr twice, so it scales at O(n), where n is the number of elements in arr
+
+//function 2DArray 
+//
 
 function stringRotation(str1, str2) {
   if (str1.length !== str2.length) {
@@ -78,19 +110,5 @@ function stringRotation(str1, str2) {
 console.log(stringRotation('amazon', 'azonma'));
 console.log(stringRotation('amazon', 'azonam'));
 
-function products(arr) { 
-  //find the product of the entire arr
-  let total_product = 1;
-  for (let i = 0; i < arr.length; i++) {
-    total_product = total_product * arr[i];
-  }
-  //loop through the array and find total_product/value for each element
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(total_product/arr[i]);
-  }
-  //return new array
-  return newArr;
-}
-
-console.log(products([1, 3, 9, 4]));
+//stringRotation passes through str2 once and builds a new string if the element
+//matches the first element of str1.  It scales at O(n), where n is the length of str2

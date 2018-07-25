@@ -79,11 +79,18 @@ console.log(stringRotation('amazon', 'azonma'));
 console.log(stringRotation('amazon', 'azonam'));
 
 function products(arr) { 
-  if (!arr.length) {
-      return [];
-    }
-//  for (let i = 0; i < arr.length; i++){
-
-      
-  return [arr[0] * [n+1], ...products(arr.slice(1))]
+  //find the product of the entire arr
+  let total_product = 1;
+  for (let i = 0; i < arr.length; i++) {
+    total_product = total_product * arr[i];
+  }
+  //loop through the array and find total_product/value for each element
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(total_product/arr[i]);
+  }
+  //return new array
+  return newArr;
 }
+
+console.log(products([1, 3, 9, 4]));
